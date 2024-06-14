@@ -1,19 +1,26 @@
-var modal = document.getElementById("contactModal");
-var btn = document.getElementById("contact");
-var span = document.getElementsByClassName("close")[0];
+// Select elements
+const contactIcon = document.getElementById('contact-icon');
+const contactForm = document.getElementById('contact-form');
+const closeForm = document.getElementById('close-form');
 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+// Toggle form visibility
+contactIcon.addEventListener('click', () => {
+    contactForm.classList.toggle('hidden');
+});
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
+// Close form
+closeForm.addEventListener('click', () => {
+    contactForm.classList.add('hidden');
+});
 
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+// Prevent form from closing when clicking inside the form
+contactForm.addEventListener('click', (event) => {
+    event.stopPropagation(); // Prevents the event from bubbling up
+});
+
+// Close form when clicking outside the form
+document.addEventListener('click', (event) => {
+    if (!contactForm.contains(event.target) && !contactIcon.contains(event.target)) {
+        contactForm.classList.add('hidden');
     }
-}
-
-
+});
