@@ -457,4 +457,10 @@ footer a:hover {
     text-decoration: underline;
 }
 
+@media (max-width: 600px) {
+    footer p {
+        font-size: 0.9em;
+    }
+}
+
 
