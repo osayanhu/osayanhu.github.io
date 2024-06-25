@@ -110,8 +110,8 @@ body{
 
 .project-container{
     display: grid;
-   grid-template-columns: 1fr 1fr;
-    grid-gap: 100px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;;
 }
 
 .project-card{
